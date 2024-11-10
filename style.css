@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    min-width: 700px;
 }
 body {
     color: #3a3839;
@@ -9,6 +8,7 @@ body {
     margin-top: 160px;
     background-image: url("bg.png");
     font-weight: normal;
+    min-width: 700px;
 }
 
 .navbar {
