@@ -98,5 +98,30 @@
         window.addEventListener('resize', updateGridLayout);
 
     </script>
+    <script>
+    function adjustViewport() {
+        // Get the current viewport width
+        let viewportWidth = window.innerWidth;
+
+        // Set the minimum width
+        const minWidth = 700;
+
+        // Calculate the scale factor
+        let scale = 1;
+        if (viewportWidth < minWidth) {
+            viewportWidth = minWidth; // Set the viewport to at least 700px wide
+            scale = viewportWidth / 700; // Adjust the scale based on the minimum width
+        }
+
+        // Apply the scale to the page and set the viewport width
+        document.querySelector('meta[name="viewport"]').setAttribute(
+            'content', `width=${viewportWidth}, initial-scale=${scale}, maximum-scale=1, user-scalable=no`
+        );
+    }
+
+    // Run the adjustment function when the page loads and when the window is resized
+    window.addEventListener('load', adjustViewport);
+    window.addEventListener('resize', adjustViewport);
+</script>
 </body>
 </html>
